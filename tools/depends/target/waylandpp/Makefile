@@ -38,6 +38,9 @@ endif
 	cd $(PLATFORM); $(ARCHIVE_TOOL) $(ARCHIVE_TOOL_FLAGS) $(TARBALLS_LOCATION)/$(ARCHIVE)
 	cd $(PLATFORM); patch -p1 -i ../001-fix-gcc13-build.patch
 	mkdir -p $(BUILDDIR)
+	@echo $(BUILDDIR)
+	@echo $(CMAKE)
+	@echo $(CMAKE_OPTIONS)
 	cd $(BUILDDIR); $(CMAKE) $(CMAKE_OPTIONS) ..
 
 $(LIBDYLIB): $(PLATFORM)

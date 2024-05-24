@@ -62,6 +62,8 @@ ifeq ($(PACKAGE),1)
   MAKE_PACKAGE = package-
 endif
 
+CMAKE_EXTRA += -DAPP_RENDER_SYSTEM=gles
+
 all: .installed-$(PLATFORM)
 
 
